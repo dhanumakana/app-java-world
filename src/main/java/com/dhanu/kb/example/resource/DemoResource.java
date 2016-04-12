@@ -1,4 +1,4 @@
-package com.dhanu.kb.example.resource;
+    package com.dhanu.kb.example.resource;
 
 import javax.ws.rs.GET;
 
@@ -15,7 +15,7 @@ public class DemoResource
     DemoService demoServiceImpl;
 
     @GET
-    @RequestMapping("/test")
+    @RequestMapping("/hi")
     public void resource1()
     {
         System.out.println("Hi : " + demoServiceImpl.getOne());

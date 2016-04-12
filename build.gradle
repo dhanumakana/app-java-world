@@ -2,14 +2,27 @@ apply plugin: 'java'
 apply plugin: 'spring-boot' 
 
 buildscript {
-	ext {
-		springBootVersion = '1.3.3.RELEASE'
-	}
+	
+	ext.libversions = [
+        "liquibase" : "3.3.2",
+        "groovy" : "2.3.10",
+        "spock" : "1.0-groovy-2.3",
+        "springboot": "1.3.0.RELEASE",
+        "springBootVersion" : "1.3.3.RELEASE",
+        "lang3" : "3.3.2",
+        "io" : "2.4",
+        "aes" : "3.18.0",
+		"edison" : "1.32.4",
+        "rxjava" : "1.0.12",
+        "newrelic": "3.19.2",
+        "springcloud": "1.1.0.M1"
+    ]
+	
 	repositories {
 		mavenCentral()
 	}
 	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${libversions.springBootVersion}")
 	}
 }
 
@@ -37,6 +50,8 @@ dependencies {
 	compile('commons-chain:commons-chain:1.2')
 	compile('io.reactivex:rxjava:1.0.14')
 	
+	compile('mysql:mysql-connector-java:5.1.34')
+	
 	testCompile('org.springframework.boot:spring-boot-starter-test') 
 	testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
 }
@@ -47,4 +62,3 @@ dependencyManagement {
     mavenBom "org.springframework.cloud:spring-cloud-starter-parent:Angel.SR4" 
   }
 }
-

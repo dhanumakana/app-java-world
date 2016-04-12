@@ -38,7 +38,7 @@ public class DemoServiceImpl implements DemoService
 
             if (null == response && attempt++ < REQUEST_ATTEMPTS)
             {
-                System.out.println("Delaying..!!");
+                System.out.println("Delaying..!!"+ savedException);
             }
         }
         return response;
